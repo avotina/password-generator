@@ -1,13 +1,15 @@
 <html>
     <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
         <link rel="stylesheet" href="index.css">
+        <title>Password generator</title>
     </head>
     <body>
         <div id="container">
             <h1>Generate a <span class="color-letters">random password<span></h1>
                 <p>Never use insecure password ever again.</p>
                     <button id="generate-btn">Generate passwords</button>
-                        <p class="border"></p>
+                    <input type="checkbox" id="large-letters">
+                        <span class="border"></span>
             <div class="passwords">
                 <h3 id="render-one" class="password-display"></h3>
                 <h3 id="render-two" class="password-display"></h3>
