@@ -5,6 +5,7 @@ let symbolsArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
 
 let renderOne = document.getElementById("render-one")
 let renderTwo = document.getElementById("render-two")
+let renderLargeLetters = document.getElementById("render-large")
 let bigLettersCheck = document.getElementById("large-letters")
 let passwordOne = []
 let passwordTwo = []
@@ -18,14 +19,16 @@ document.getElementById("generate-btn").addEventListener("click", function() {
             renderOne.textContent = passwordOne.join("")
             passwordTwo.push(randomSymbolSecond)
             renderTwo.textContent = passwordTwo.join("")
-            bigLetters()
     }
+    bigLetters()
     generateNextSet()
 })
 
 function bigLetters() {
   if (bigLettersCheck.checked) {
-    console.log("checked")
+    let largeLettersOnly = symbolsArray.slice(0, 26)
+    passwordOne.push(largeLettersOnly)
+    renderLargeLetters.textContent = passwordOne.join("")
   }
 }
 
