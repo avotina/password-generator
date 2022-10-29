@@ -7,6 +7,7 @@ let renderOne = document.getElementById("render-one")
 let renderTwo = document.getElementById("render-two")
 let renderNumbers = document.getElementById("render-num")
 let numbers = document.getElementById("numbers")
+let letters = document.getElementById("letters")
 const generateBtn = document.getElementById("generate-btn")
 let passwordLength = 15
 
@@ -30,7 +31,8 @@ function generateBasePassword(){
         let randomBaseSymbolsTwo = Math.floor(Math.random() * basePassword.length)
         renderOne.textContent += basePassword[randomBaseSymbolsOne]
         renderTwo.textContent += basePassword[randomBaseSymbolsTwo]
-        includeNumbers()
+          includeNumbers()
+          includeCapitalLetters()
       }
       generateNextSet()
   })
@@ -47,6 +49,19 @@ let numbersArray = symbolsArray.slice(52, 100)
       renderTwo.textContent += numbersArray[randomBaseSymbolsTwo]
     }
 }
+
+function includeCapitalLetters() {
+  let capitalLetters = symbolsArray.slice(0, 26)
+  let basePassword = symbolsArray.slice(62, 100)
+     if (letters.checked) {
+      let randomBaseSymbolsOne = Math.floor(Math.random() * (capitalLetters.length + basePassword.length))
+      let randomBaseSymbolsTwo = Math.floor(Math.random() * (capitalLetters.length + basePassword.length))
+      renderOne.textContent += capitalLetters[randomBaseSymbolsOne]
+      renderTwo.textContent += capitalLetters[randomBaseSymbolsTwo]
+     }
+}
+
+includeCapitalLetters()
 
 function generateNextSet() {
     renderOne = []
