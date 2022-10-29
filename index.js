@@ -30,8 +30,8 @@ function generateBasePassword(){
         let randomBaseSymbolsTwo = Math.floor(Math.random() * basePassword.length)
         renderOne.textContent += basePassword[randomBaseSymbolsOne]
         renderTwo.textContent += basePassword[randomBaseSymbolsTwo]
+        includeNumbers()
       }
-      includeNumbers()
       generateNextSet()
   })
 }
@@ -43,12 +43,10 @@ let numbersArray = symbolsArray.slice(52, 100)
     if (numbers.checked) {
       let randomBaseSymbolsOne = Math.floor(Math.random() * numbersArray.length)
       let randomBaseSymbolsTwo = Math.floor(Math.random() * numbersArray.length)
-      renderNumbers.textContent += numbersArray[randomBaseSymbolsOne]
+      renderOne.textContent += numbersArray[randomBaseSymbolsOne]
       renderTwo.textContent += numbersArray[randomBaseSymbolsTwo]
     }
 }
-
-
 
 function generateNextSet() {
     renderOne = []
