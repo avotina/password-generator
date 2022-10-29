@@ -5,6 +5,7 @@ let symbolsArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
 
 let renderOne = document.getElementById("render-one")
 let renderTwo = document.getElementById("render-two")
+let renderNumbers = document.getElementById("render-num")
 let numbers = document.getElementById("numbers")
 const generateBtn = document.getElementById("generate-btn")
 let passwordLength = 15
@@ -38,13 +39,15 @@ function generateBasePassword(){
 generateBasePassword()
 
 function includeNumbers() {
-let numbersArray = symbolsArray.slice(52, 62)
+let numbersArray = symbolsArray.slice(52, 100)
     if (numbers.checked) {
-      
+      let randomBaseSymbolsOne = Math.floor(Math.random() * numbersArray.length)
+      let randomBaseSymbolsTwo = Math.floor(Math.random() * numbersArray.length)
+      renderNumbers.textContent += numbersArray[randomBaseSymbolsOne]
+      renderTwo.textContent += numbersArray[randomBaseSymbolsTwo]
     }
 }
 
-includeNumbers()
 
 
 function generateNextSet() {
