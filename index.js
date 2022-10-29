@@ -30,6 +30,7 @@ function generateBasePassword(){
         renderOne.textContent += basePassword[randomBaseSymbolsOne]
         renderTwo.textContent += basePassword[randomBaseSymbolsTwo]
       }
+      includeNumbers()
       generateNextSet()
   })
 }
@@ -38,6 +39,9 @@ generateBasePassword()
 
 function includeNumbers() {
 let numbersArray = symbolsArray.slice(52, 62)
+    if (numbers.checked) {
+      
+    }
 }
 
 includeNumbers()
